@@ -1,0 +1,31 @@
+@charset "utf-8";
+div{
+  border: 2px solid black;
+
+}
+.cprincipal{
+    }
+.infoprin{
+    width: 65%;
+    float: left;
+    
+}
+
+.refrescar{
+    margin-top: 75px;
+    margin-left: 50px;
+}
+
+.tempactual{
+    float: right;
+}
+.imgprin{
+  width: 40%;  
+}
+.imgdias{
+  width: 90%;  
+}
+
+.detallesActual{
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
        <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -8,87 +8,119 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link href="" rel="stylesheet" type="text/css">
-
-        <title>El Tiempo</title>
+        <link href="css/style.css" rel="stylesheet" type="text/css">
+    <title>El Tiempo</title>
     </head>
     <body>
-        <section class="container w-100">
+        <section class="container-fluid">
 
             <!--CIUDAD, DIA Y TIEMPO ACTUAL-->
 
-            <div class="row">
-                <div class="col col-xs-12 col-md-12 col-lg-12">
+            <div class="row tal">
+                <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
+                <div class="infoprin">    
+                <img src="img/sol.png" class="imgprin" alt="tiempo"> 
+                  <h4>Madrid</h4>
+                    <h6>14/01/2025</h6>
+                    
+                 </div> 
+                      
+                    
+                 <div class="tempactual">
+                  <h2>30º</h2> 
+                  <h4>Max 34º/Min 22º</h4>
+                   
+                    
+                </div> 
+                    
+                 <button class="btn btn-success refrescar">Refresh</button>  
+                    
+                </div>
+                
+                 <div class="col-xs-2 col-md-2 col-lg-2 detallesActual">
+                    
+                    <table width="200" border="1">
+                      <tbody>
+                        <tr>
+                          <td>Viento<br>
+                              <h6>Viento tal</h6>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Nubes<br>
+                              <h6>Nube tal</h6>
+                         </td>
+                        </tr>
+                        <tr>
+                          <td>Volumen lluvia<br>
+                              <h6>lluvia tal</h6></td>
+                        </tr>
+                        <tr>
+                          <td>Volumen nieve<br>
+                              <h6>Nieve tal</h6></td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    
+                
+                 </div>
+                
+                
+                
+                
+                <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
+                 <table border="1">
+                      <tbody>
+                        <tr>
+                          <th scope="col">Dia 1</th>
+                          <th scope="col">Dia 2</th>
+                          <th scope="col">Dia 3</th>
+                          <th scope="col">Dia 4</th>
+                          <th scope="col">Dia 5</th>
+                        </tr>
+                        <tr>
+                          <td>
+                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                            <h4>30º</h4> 
+                            <h6>Max 34º/ Min 22º</h6>
+                          </td>
+
+                            <td>
+                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                            <h4>30º</h4> 
+                            <h6>Max 34º/ Min 22º</h6>
+                          </td>
+
+                            <td>
+                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                            <h4>30º</h4> 
+                            <h6>Max 34º/ Min 22º</h6>
+                          </td>
+
+                            <td>
+                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                            <h4>30º</h4> 
+                            <h6>Max 34º/ Min 22º</h6>
+                          </td>
+
+                            <td>
+                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                            <h4>30º</h4> 
+                            <h6>Max 34º/ Min 22º</h6>
+                          </td>
+
+                        </tr>
+                      </tbody>
+                    </table>
 
                 </div>
             </div>
             <br>
 
-            <!-- -->
+        
 
-            <div class="row">
-                <!--TEMPERATURA MAXIMA Y MINIMA-->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-
-                </div>
-                <!--BLANK-->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-
-                </div>
-                <!--REFRESH-->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-
-                </div>
-            </div>
-            <br>
-
-            <!-- -->
-
-            <div class="row">
-                <!--VELOCIDAD VIENTO-->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-
-                </div>
-                <!--NUBES-->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-
-                </div>
-                <!-- -->
-                <div class="col col-xs-4 col-md-4 col-lg-4">
-                    <!--LLUVIA ULTIMA HORA-->
-                    <div class="row">
-
-                    </div>
-                    <!--NIEVE ULTIMO HORA-->
-                    <div class="row">
-    
-                    </div>
-                </div>
-            </div>
-            <br>
-
-            <!-- -->
-
-            <div class="row">
-                <!--PREVISION A 5 DÍAS-->
-                <div class="col col-xs-12 col-md-12 col-lg-12">
-
-                </div>
-            </div>
-            <br>
-
-            <!-- -->
-
-            <div class="row">
-                <!--OTRAS CIUDADES-->
-                <div class="col col-xs-6 col-md-6 col-lg-6">
-
-                </div>
-                <!--LOG IN-->
-                <div class="col col-xs-6 col-md-6 col-lg-6">
-
-                </div>
-            </div>
+            
         </section>
     </body>
 </html>
