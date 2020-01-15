@@ -1,126 +1,114 @@
 <!DOCTYPE html>
 <html>
-<head>
-       <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
     <title>El Tiempo</title>
-    </head>
-    <body>
-        <section class="container-fluid">
 
-            <!--CIUDAD, DIA Y TIEMPO ACTUAL-->
+  </head>
+  <body>
+    <section class="container-fluid">
+    <!--CIUDAD, DIA Y TIEMPO ACTUAL-->
 
-            <div class="row tal">
-                <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
-                <div class="infoprin">    
-                <img src="img/sol.png" class="imgprin" alt="tiempo"> 
-                  <h4>Madrid</h4>
-                    <h6>14/01/2025</h6>
-                    
-                 </div> 
-                      
-                    
-                 <div class="tempactual">
-                  <h2>30º</h2> 
-                  <h4>Max 34º/Min 22º</h4>
-                   
-                    
-                </div> 
-                    
-                 <button class="btn btn-success refrescar">Refresh</button>  
-                    
-                </div>
-                
-                 <div class="col-xs-2 col-md-2 col-lg-2 detallesActual">
-                    
-                    <table width="200" border="1">
-                      <tbody>
-                        <tr>
-                          <td>Viento<br>
-                              <h6>Viento tal</h6>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Nubes<br>
-                              <h6>Nube tal</h6>
-                         </td>
-                        </tr>
-                        <tr>
-                          <td>Volumen lluvia<br>
-                              <h6>lluvia tal</h6></td>
-                        </tr>
-                        <tr>
-                          <td>Volumen nieve<br>
-                              <h6>Nieve tal</h6></td>
-                        </tr>
-                      </tbody>
-                    </table>
+      <div class="row tal">
+        <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
+          <div class="infoprin">    
+            <img src="img/sol.png" class="imgprin" alt="tiempo"> 
+            <h4 id="name"></h4>
+            <h6 id="day"></h6>
+            <h6 id="date"></h6>
+          </div>     
+          <div class="tempactual">
+            <h2 id="mainTemp"></h2> 
+            <h4 id="maxMin"></h4>
+          </div> 
+          <button id="refresh" class="btn btn-success refrescar">Refresh</button>  
+        </div>
+        <div class="col-xs-2 col-md-2 col-lg-2 detallesActual">
+          <table width="200" border="1">
+            <tbody>
+              <tr>
+                <td>Velocidad Viento<br>
+                  <h6 id="wind"></h6>
+                </td>
+              </tr>
+              <tr>
+                <td>Nubes<br>
+                  <h6 id="cloud"></h6>
+                </td>
+              </tr>
+              <tr>
+                <td>Volumen lluvia<br>
+                  <h6 id="rain"></h6>
+                </td>
+              </tr>
+              <tr>
+                <td>Volumen nieve<br>
+                  <h6 id="snow"></h6>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
+          <table border="1">
+            <tbody>
+              <tr>
+                <th class="forecastDay" scope="col"></th>
+                <th class="forecastDay" scope="col"></th>
+                <th class="forecastDay" scope="col"></th>
+                <th class="forecastDay" scope="col"></th>
+                <th class="forecastDay" scope="col"></th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                  <h4>30º</h4> 
+                  <h6>Max 34º/ Min 22º</h6>
+                </td>
+                <td>
+                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                  <h4>30º</h4> 
+                  <h6>Max 34º/ Min 22º</h6>
+                </td>
+                <td>
+                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                  <h4>30º</h4> 
+                  <h6>Max 34º/ Min 22º</h6>
+                </td>
+                <td>
+                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                  <h4>30º</h4> 
+                  <h6>Max 34º/ Min 22º</h6>
+                </td>
+                <td>
+                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
+                  <h4>30º</h4> 
+                  <h6>Max 34º/ Min 22º</h6>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br>
+    </section>
 
-                    
-                
-                 </div>
-                
-                
-                
-                
-                <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
-                 <table border="1">
-                      <tbody>
-                        <tr>
-                          <th scope="col">Dia 1</th>
-                          <th scope="col">Dia 2</th>
-                          <th scope="col">Dia 3</th>
-                          <th scope="col">Dia 4</th>
-                          <th scope="col">Dia 5</th>
-                        </tr>
-                        <tr>
-                          <td>
-                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                            <h4>30º</h4> 
-                            <h6>Max 34º/ Min 22º</h6>
-                          </td>
+    <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous">
+    </script>
+    <!-- Hoja de JS -->
+    <script src="sprint5.js"></script>
 
-                            <td>
-                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                            <h4>30º</h4> 
-                            <h6>Max 34º/ Min 22º</h6>
-                          </td>
-
-                            <td>
-                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                            <h4>30º</h4> 
-                            <h6>Max 34º/ Min 22º</h6>
-                          </td>
-
-                            <td>
-                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                            <h4>30º</h4> 
-                            <h6>Max 34º/ Min 22º</h6>
-                          </td>
-
-                            <td>
-                              <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                            <h4>30º</h4> 
-                            <h6>Max 34º/ Min 22º</h6>
-                          </td>
-
-                        </tr>
-                      </tbody>
-                    </table>
-
-                </div>
-            </div>
-            <br>
-
-        
-
-            
-        </section>
-    </body>
+  </body>
 </html>
