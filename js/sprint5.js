@@ -26,12 +26,30 @@ function infogen(){
             var dateString = moment.unix(dateUni).format("DD/MM/YYYY");
             var dia = moment.unix(dateUni).format('dddd');
             var dateNorm = new Date(dateUni*1000); 
-            
-            
-            
+   
             /* seccion variables */
+
+     /* lluvia */
+            if (result.rain == undefined || result.rain["3h"] != null ){
+                
+               $("#rain").html("0 mm");
+                
+            }else{
+               $("#rain").html(result.rain["1h"]);
+            }
+            
+       /* nieve*/ 
+             if (result.snow == undefined || result.snow["3h"] != null ){
+                
+               $("#snow").html("0 mm");
+                
+            }else{
+               $("#snow").html(result.snow["1h"]);
+            }
             
             
+            
+            /* seccion de imprimir en html*/
             console.log(result);
         $("#name").html(ciudad);
         $("#mainTemp").html(Math.round(result.main.temp) + "Cº");
@@ -42,6 +60,14 @@ function infogen(){
         $(".imgdias").attr("src",iurl);/* hacer variable con API de los 5 dias(horas en este caso)*/
         $("#day").html(dateString + " Hola");
         $("#date").html(dia + " Ten un buen día"); 
+           
+            
+            
+            
+            
+            
+         
+            
             
             
             
@@ -60,9 +86,24 @@ function infogen(){
                    
                    
     
- }/*funcion*/
+ }
+    
+   
+/*function para5(){
+    $.ajax({
+        url: "api.openweathermap.org/data/2.5/forecast?id=3117732&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
+        datatype : "json",
+        type: "GET",
+        success: function(result){
+            
+        }
+        
+    })
     
     
+    
+    
+}*/
      
     
     

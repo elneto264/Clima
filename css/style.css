@@ -3,21 +3,43 @@ div{
   border: 2px solid black;
 
 }
+
 .cprincipal{
-    }
-.infoprin{
-    width: 65%;
-    float: left;
+    width: 100%;
+    
+}
+.cincodias{
+    width: 100%;
     
 }
 
+.infoprin{
+    width: 100%;
+    float: left;
+    margin-top: 25px;
+    font-size: 32pt;
+ 
+}
+
 .refrescar{
-    margin-top: 75px;
-    margin-left: 50px;
+    float: right;
+    margin-bottom: 10px;
+    
+}
+.arrow{
+  width: 10%;  
+    
+    
+}
+.refrescar{
+    
 }
 
 .tempactual{
+    
+   
     float: right;
+   
 }
 .imgprin{
   width: 40%;  
@@ -27,5 +49,39 @@ div{
 }
 
 .detallesActual{
+    width: 100%;
+    margin-top: 12px;
+    padding: 0;
     text-align: center;
+    font-size: 12pt;
+}
+
+.detallesActual td{
+    padding: 0;
+}
+
+
+#cabezera{
+   
+}
+
+#imglogo{
+    width: 100%;
+}
+#usuario{
+   
+    margin-top: 10px;
+    width: 100%;
+}
+#clave{
+    margin-top: 10px;
+    width: 100%;
+}
+#blogin{
+    margin-top: 6px;
+    width: 100%;
+}
+#bregister{
+    margin-top: 6px;
+    width: 100%;
 }

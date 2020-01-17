@@ -14,26 +14,64 @@
 
   </head>
   <body>
-    <section id="cdatos" class="container-fluid">
+<section class="container-fluid" id="cabezera">
+    
+      <div class="row">
+            <div class="col-xs-2 col-md-2 col-lg-2 collogo">
+            <img src="img/logo.png" id="imglogo" alt="imagotipo">
+          
+            </div>
+            <div class="col-xs-6 col-md-6 col-lg-6">
+              <p id="infoUsuario"></p>
+          
+            </div>
+          
+            <div class="col-xs-1 col-md-1 col-lg-1"> 
+              <!--<input type="text" name="usuario" id="usuario" placeholder="Usuario">-->  
+            </div>
+            <div class="col-xs-1 col-md-1 col-lg-1">
+               <!--<input type="password" name="usuario" id="clave" placeholder="Clave">  --> 
+            </div>
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <!--<button class="btn btn-info" id="blogin">Login</button>-->
+            </div>
+            <div class="col-xs-1 col-md-1 col-lg-1">
+                <!--<button class="btn btn-danger" id="bregister">Registrar</button>-->
+            </div>
+        
+    
+      </div>
+    
+      
+</section>
+      
+    
+    <section id="cdatos" class="container">
     <!--CIUDAD, DIA Y TIEMPO ACTUAL-->
 
-      <div class="row tal">
-        <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
-          <div class="infoprin">    
-            <img id="imgcurrent" src="" alt="Weather icon">
-            <h4 id="name"></h4>
-            <h6 id="day"></h6>
-            <h6 id="date"></h6>
-          </div>     
+      <div class="row datosactual">
+        <div class="col-xs-6 col-md-6 col-lg-6 cprincipal">
+          <div class="infoprin">  
+              
           <div class="tempactual">
             <h2 id="mainTemp"></h2> 
             <h4 id="maxMin"></h4>
+            
           </div> 
-          <button id="refresh" class="btn btn-success refrescar">Refresh</button>  
+              
+            <img id="imgcurrent" src="" alt="Weather icon">
+            <h4 id="name"></h4>
+            <h6 id="day"></h6>
+            <h6 id="date"></h6>     
+         </div>
+            
+            <button id="refresh" class="btn btn-success refrescar">Refresh  <img src="img/arrow.png" class="arrow" alt="rarrow"></button> 
+            
         </div>
-        <div class="col-xs-2 col-md-2 col-lg-2 detallesActual">
-          <table width="200" border="1">
-            <tbody>
+          
+        <div class="col-xs-6 col-md-6 col-lg-6 detallesActual">
+          <table border="1" class="table table-striped detallesActual">
+            <tbody class="detallesActual">
               <tr>
                 <td>Velocidad Viento<br>
                   <h6 id="wind"></h6>
@@ -57,49 +95,58 @@
             </tbody>
           </table>
         </div>
-        <div class="col-xs-5 col-md-5 col-lg-5 cprincipal">
-          <table border="1">
-            <tbody>
-              <tr>
-                <th class="forecastDay" scope="col"></th>
-                <th class="forecastDay" scope="col"></th>
-                <th class="forecastDay" scope="col"></th>
-                <th class="forecastDay" scope="col"></th>
-                <th class="forecastDay" scope="col"></th>
-              </tr>
-              <tr>
-                <td>
-                  <img src="" class="imgdias" alt="tiempo"> 
-                  <h4>30º</h4> 
-                  <h6>Max 34º/ Min 22º</h6>
-                </td>
-                <td>
-                  <img src="" class="imgdias" alt="tiempo"> 
-                  <h4>30º</h4> 
-                  <h6>Max 34º/ Min 22º</h6>
-                </td>
-                <td>
-                  <img src="" class="imgdias" alt="tiempo"> 
-                  <h4>30º</h4> 
-                  <h6>Max 34º/ Min 22º</h6>
-                </td>
-                <td>
-                  <img src="" class="imgdias" alt="tiempo"> 
-                  <h4>30º</h4> 
-                  <h6>Max 34º/ Min 22º</h6>
-                </td>
-                <td>
-                  <img src="img/sol.png" class="imgdias" alt="tiempo"> 
-                  <h4>30º</h4> 
-                  <h6>Max 34º/ Min 22º</h6>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+    </div>
+ </section>
+        
+        
+        
+<section class="container">
+    <div class="row">
+        <div class="col-xs-2 col-md-2 col-lg-2 pronostico2">
+            
+            <h4>Pronostico para los proximos dias</h4> 
+                
         </div>
-      </div>
-      <br>
-    </section>
+        
+        <div class="col-xs-2 col-md-2 col-lg-2 cincodias">
+            <img src="" class="imgdias" alt="tiempo"> 
+            <h4>30º</h4> 
+            <h6>Max 34º/ Min 22º</h6>     
+        </div> 
+        
+        <div class="col-xs-2 col-md-2 col-lg-2 cincodias">
+            <img src="" class="imgdias" alt="tiempo"> 
+            <h4>30º</h4> 
+            <h6>Max 34º/ Min 22º</h6>     
+        </div> 
+        
+        <div class="col-xs-2 col-md-2 col-lg-2 cincodias">
+            <img src="" class="imgdias" alt="tiempo"> 
+            <h4>30º</h4> 
+            <h6>Max 34º/ Min 22º</h6>     
+        </div> 
+        
+        <div class="col-xs-2 col-md-2 col-lg-2 cincodias">
+            <img src="" class="imgdias" alt="tiempo"> 
+            <h4>30º</h4> 
+            <h6>Max 34º/ Min 22º</h6>     
+        </div> 
+        
+        <div class="col-xs-2 col-md-2 col-lg-2 cincodias">
+            <img src="" class="imgdias" alt="tiempo"> 
+            <h4>30º</h4> 
+            <h6>Max 34º/ Min 22º</h6>     
+        </div>
+        
+        
+    </div>
+   
+       
+</section>
+          
+          
+          
+   
 
     <!-- Jquery -->
     <script
