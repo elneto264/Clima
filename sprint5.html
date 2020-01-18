@@ -13,12 +13,17 @@
     <title>El Tiempo</title>
 
   </head>
-  <body>
+ <body>
+
+ 
+	 
+<section class="fondor">	 
+		  
 <section class="container-fluid" id="cabezera">
     
       <div class="row">
             <div class="col-xs-2 col-md-2 col-lg-2 collogo">
-            <img src="img/logo.png" id="imglogo" alt="imagotipo">
+            <!--<img src="img/logo.png" id="imglogo" alt="imagotipo">-->
           
             </div>
             <div class="col-xs-6 col-md-6 col-lg-6">
@@ -45,8 +50,12 @@
       
 </section>
       
-    
-    <section id="cdatos" class="container">
+
+	
+
+	  
+	  
+<section id="cdatos" class="container cdatos">
     <!--CIUDAD, DIA Y TIEMPO ACTUAL-->
 
       <div class="row datosactual">
@@ -54,26 +63,29 @@
           <div class="infoprin">  
               
           <div class="tempactual">
-            <h2 id="mainTemp"></h2> 
+			  <h3>Temperatura actual</h3>
+            <h2 id="mainTemp"></h2>
             <h4 id="maxMin"></h4>
             
           </div> 
               
-            <img id="imgcurrent" src="" alt="Weather icon">
+            <img id="imgcurrent" src="" alt="Weather icon" class="imgcurrent">
             <h4 id="name"></h4>
             <h6 id="day"></h6>
             <h6 id="date"></h6>     
          </div>
+           
+			
+            <input type="image" id="refresh" class="refrescar sarrow" name="refrescar"  src="img/arrow2.png" alt="arroes">
             
-            <button id="refresh" class="btn btn-success refrescar">Refresh  <img src="img/arrow.png" class="arrow" alt="rarrow"></button> 
-            
+			
         </div>
           
         <div class="col-xs-6 col-md-6 col-lg-6 detallesActual">
-          <table border="1" class="table table-striped detallesActual">
+          <table  class="table table-striped detallesActual">
             <tbody class="detallesActual">
               <tr>
-                <td>Velocidad Viento<br>
+                <td style="border-top:none;">Velocidad Viento<br>
                   <h6 id="wind"></h6>
                 </td>
               </tr>
@@ -100,7 +112,7 @@
         
         
         
-<section class="container">
+<section class="container secDatos">
     <div class="row">
         <div class="col-xs-2 col-md-2 col-lg-2 pronostico2">
             
@@ -143,10 +155,17 @@
    
        
 </section>
-          
-          
-          
-   
+
+
+
+	
+<footer class="container-fluid piedepagina">
+	 
+	 
+</footer> 	
+	
+</section>  
+	 
 
     <!-- Jquery -->
     <script

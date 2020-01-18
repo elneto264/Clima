@@ -9,6 +9,10 @@ $("#refresh").click(function(){
     console.log("refresca la info");
 });   
  
+$(".sarrow").click(function() {
+  $('.refrescar').toggleClass('sarrow-active');
+});
+
     
 function infogen(){ 
         $.ajax({
@@ -51,15 +55,15 @@ function infogen(){
             
             /* seccion de imprimir en html*/
             console.log(result);
-        $("#name").html(ciudad);
-        $("#mainTemp").html(Math.round(result.main.temp) + "Cº");
+        $("#name").html(ciudad+" <style>#name {font-size: 5vh};</style>");
+        $("#mainTemp").html(Math.round(result.main.temp) + "<style>#mainTemp {font-size: 6vh};</style> Cº");
         $("#maxMin").html(Math.round(result.main.temp_max) + "º" + " / " + Math.round(result.main.temp_min) + "º");
         $("#wind").html(result.wind.speed + " m/s");
         $("#cloud").html(result.clouds.all + " %");
         $("#imgcurrent").attr("src",iurl);
         $(".imgdias").attr("src",iurl);/* hacer variable con API de los 5 dias(horas en este caso)*/
-        $("#day").html(dateString + " Hola");
-        $("#date").html(dia + " Ten un buen día"); 
+        $("#day").html(dateString + "<style>#day {font-size: 4vh};</style>");
+        $("#date").html(dia + "<style>#date {font-size: 4vh};</style>"); 
            
             
             
