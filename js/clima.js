@@ -1,80 +1,60 @@
-
-
-
-
 $(document).ready(infogen);
 
 $("#refresh").click(function(){
-          infogen();
+    infogen();
     console.log("refresca la info");
-});   
- 
-$(".sarrow").click(function() {
-  $('.refrescar').toggleClass('sarrow-active');
-});
+}); 
 
-    
 function infogen(){ 
-        $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?id=3117732&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
-        datatype : "json",
-        type: "GET",
-        success: function(result){
-            /* seccion variables */
-            
-          
-            var icono = result.weather[0].icon;
-            var iurl = "http://openweathermap.org/img/wn/" + icono + "@2x.png";
-            var ciudad = result.name;
-            var dateUni = result.dt;  
-            var dateString = moment.unix(dateUni).format("DD/MM/YYYY");
-            var dia = moment.unix(dateUni).format('dddd');
-            var dateNorm = new Date(dateUni*1000); 
-   
-            /* seccion variables */
+	$.ajax({
+		url:"http://api.openweathermap.org/data/2.5/weather?id=3117732&APPID=6967c0545bc9b2c52b54e1fd9e453d42&units=metric",
+		datatype: "json",
+		type: "GET",
+		success: function(result){
+			var icono = result.weather[0].icon;
+			var iurl = "http://openweathermap.org/img/wn/" + icono + "@2x.png";
+			var ciudad = result.name;
+			var dateUni = result.dt;  
+        	var dateString = moment.unix(dateUni).format("DD/MM/YYYY");
+        	var dia = moment.unix(dateUni).format('dddd');
+        	var dateNorm = new Date(dateUni*1000);
 
-     /* lluvia */
-            if (result.rain == undefined || result.rain["3h"] != null ){
-                
-               $("#rain").html("0 mm");
-                
-            }else{
-               $("#rain").html(result.rain["1h"]);
-            }
-            
-       /* nieve*/ 
-             if (result.snow == undefined || result.snow["3h"] != null ){
-                
-               $("#snow").html("0 mm");
-                
-            }else{
-               $("#snow").html(result.snow["1h"]);
-            }
-            
-            
-            
-            /* seccion de imprimir en html*/
-            console.log(result);
-        $("#name").html(ciudad+" <style>#name {font-size: 5vh};</style>");
-        $("#mainTemp").html(Math.round(result.main.temp) + "<style>#mainTemp {font-size: 6vh};</style> Cº");
-        $("#maxMin").html(Math.round(result.main.temp_max) + "º" + " / " + Math.round(result.main.temp_min) + "º");
-        $("#wind").html(result.wind.speed + " m/s");
-        $("#cloud").html(result.clouds.all + " %");
-        $("#imgcurrent").attr("src",iurl);
-        $("#day").html(dateString + "<style>#day {font-size: 4vh};</style>");
-        $("#date").html(dia + "<style>#date {font-size: 4vh};</style>"); 
-           
-        },
-        error: function(){
-            console.log("ERROR: de este lado");
-        }
-       
- 
-       
-   });  
-                  
-                /* 2ndo ajax */                
-    $.ajax({
+
+			if(result.rain == undefined || result.rain != null){
+				$("#rain").html("0 mm");
+			}
+				else{
+					$("#rain").html(result.rain["1h"]);
+				}
+
+			if(result.snow == undefined || result.snow != null){
+				$("#snow").html("0 mm");
+			}
+				else{
+					$("#snow").html(result.snow["1h"]);
+				}
+
+			$("#wind").html(result.wind.speed + " m/s");
+			$("#cloud").html(result.clouds.all + " %");
+			$("#imgcurrent").attr("src", iurl);
+			$(".imgdias").attr("src", iurl);
+			$("#name").html(ciudad);
+			$("#mainTemp").html(Math.round(result.main.temp) + " ºC");
+			$("#maxMin").html(Math.round(result.main.temp_max) + "º" +"/"
+								+ Math.round(result.main.temp_min) + "º");
+			$("#day").html(dateString);
+        	$("#date").html(dia);
+
+			console.log(result);
+			
+		},
+		error: function(){
+			console.log("ERROR:");		
+		}
+
+	});
+
+	$.ajax({
 		url:"http://api.openweathermap.org/data/2.5/forecast?id=3117732&APPID=6967c0545bc9b2c52b54e1fd9e453d42&units=metric",
 		datatype: "json",
 		type: "GET",
@@ -102,7 +82,6 @@ function infogen(){
 			$("#forecastDay3").html(days[(d + 3)%7]);
 			$("#forecastDay4").html(days[(d + 4)%7]);
 			$("#forecastDay5").html(days[(d + 5)%7]);
-            
 
 			$("#maxMinDia1").html(Math.round(Math.max(forecast.list[0].main.temp_max, forecast.list[1].main.temp_max,
 				forecast.list[2].main.temp_max, forecast.list[3].main.temp_max, forecast.list[4].main.temp_max,
@@ -110,7 +89,6 @@ function infogen(){
 				+ Math.round(Math.min(forecast.list[0].main.temp_min, forecast.list[1].main.temp_min,
 				forecast.list[2].main.temp_min, forecast.list[3].main.temp_min, forecast.list[4].main.temp_min, 
 				forecast.list[5].main.temp_min, forecast.list[6].main.temp_min, forecast.list[7].main.temp_min)) + " ºC");
-            
 			$("#maxMinDia2").html(Math.round(Math.max(forecast.list[8].main.temp_max, forecast.list[9].main.temp_max, 
 				forecast.list[10].main.temp_max, forecast.list[11].main.temp_max, forecast.list[12].main.temp_max,
 				forecast.list[13].main.temp_max, forecast.list[14].main.temp_max, forecast.list[15].main.temp_max)) + " ºC" +"/"
@@ -144,11 +122,6 @@ function infogen(){
 		}
 
 	});
- }
-    
-   
 
-     
-    
-    
-    
+
+}
