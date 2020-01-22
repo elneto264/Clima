@@ -94,6 +94,9 @@ background: linear-gradient(180deg, rgba(177,143,80,1) 3%, rgba(255,213,158,0.86
 	color: white;
 	
 }
+
+
+
 .detallesActual th{
     font-weight: normal;     
     font-size: 18pt;
@@ -134,12 +137,15 @@ background: linear-gradient(180deg, rgba(177,143,80,1) 3%, rgba(255,213,158,0.86
 	text-align: center;
 }
 #cabezera{
-	height: 4%;
+	height: 6.8%;
 	background-color: #000000;
 	opacity: 0.8;
 	margin-bottom: 26px;
 }
-
+#ciudades{
+    margin: 5px;
+    padding: 5px;
+}
 #imglogo{
     width: 100%;
 }

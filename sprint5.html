@@ -27,7 +27,14 @@
           
             </div>
             <div class="col-xs-6 col-md-6 col-lg-6">
-              <p id="infoUsuario"></p>
+              
+            <select class="form-control" name="ciudades" id="ciudades">
+              <option value="3117732">Madrid</option>
+              <option value="524901">Moscú</option>
+              <option value="1609350">Bangkok</option>
+              <option value="2172517">Canberra</option>
+              <option value="1261481">New Delhi</option>
+            </select>
           
             </div>
           
@@ -63,9 +70,10 @@
           <div class="infoprin">  
               
           <div class="tempactual">
-			  <h3>Temperatura actual</h3>
+			  <h3 id="tipodia"></h3>
             <h2 id="mainTemp"></h2>
             <h4 id="maxMin"></h4>
+            
             
           </div> 
               
@@ -84,9 +92,9 @@
         <div class="col-xs-6 col-md-6 col-lg-6 detallesActual">
           <table  class="table table-striped detallesActual">
             <tbody class="detallesActual">
-                <th>Información adicional </th>
+                <th style="border-top:none;">Información adicional </th>
               <tr>
-                <td style="border-top:none;">Velocidad Viento<br>
+                <td>Velocidad Viento<br>
                   <h6 id="wind"></h6>
                 </td>
               </tr>

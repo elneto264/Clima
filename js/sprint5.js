@@ -16,7 +16,7 @@ $(".sarrow").click(function() {
     
 function infogen(){ 
         $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?id=3117732&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
+        url: "http://api.openweathermap.org/data/2.5/weather?id=3117732&lang=sp&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
         datatype : "json",
         type: "GET",
         success: function(result){
@@ -30,9 +30,13 @@ function infogen(){
             var dateString = moment.unix(dateUni).format("DD/MM/YYYY");
             var dia = moment.unix(dateUni).format('dddd');
             var dateNorm = new Date(dateUni*1000); 
-   
+            var d1 = (dateNorm.getDay());
+            var day1 = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+           
             /* seccion variables */
-
+            $("#date").html(day1[(d1)%7] + "<style>#date {font-size: 4vh};</style>");
+		   
+            
      /* lluvia */
             if (result.rain == undefined || result.rain["3h"] != null ){
                 
@@ -56,19 +60,35 @@ function infogen(){
             /* seccion de imprimir en html*/
             console.log(result);
         $("#name").html(ciudad+" <style>#name {font-size: 5vh};</style>");
-        $("#mainTemp").html(Math.round(result.main.temp) + "<style>#mainTemp {font-size: 6vh};</style> Cº");
-        $("#maxMin").html(Math.round(result.main.temp_max) + "º" + " / " + Math.round(result.main.temp_min) + "º");
+        $("#mainTemp").html(Math.round(result.main.temp) + "<style>#mainTemp {font-size: 6vh};</style> ºC");
+        $("#maxMin").html(Math.round(result.main.temp_max) + " ºC" + " / " + Math.round(result.main.temp_min) + " ºC");
         $("#wind").html(result.wind.speed + " m/s");
         $("#cloud").html(result.clouds.all + " %");
         $("#imgcurrent").attr("src",iurl);
         $("#day").html(dateString + "<style>#day {font-size: 4vh};</style>");
-        $("#date").html(dia + "<style>#date {font-size: 4vh};</style>"); 
+        /*$("#date").html(dia + "<style>#date {font-size: 4vh};</style>"); */
+        $("#tipodia").html(result.weather[0].description);
            
         },
         error: function(){
             console.log("ERROR: de este lado");
         }
-       
+       /* select ciudades*/
+            
+      
+            
+           /* if ( selecion == 1){
+               3117732(en la direccion url)
+            
+            }*/
+            
+            
+            
+            
+            
+            
+            
+            
  
        
    });  
