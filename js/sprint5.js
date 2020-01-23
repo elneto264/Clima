@@ -12,11 +12,42 @@ $("#refresh").click(function(){
 $(".sarrow").click(function() {
   $('.refrescar').toggleClass('sarrow-active');
 });
+ 
 
-    
+function sale() {
+  $("#unover").show();
+}
+
+function esconde() {
+ $("#unover").hide();
+} 
+
+
+function sale2() {
+  $("#unover2").show();
+}
+
+
+function esconde2() {
+  $("#unover2").hide();
+} 
+
+
+  
 function infogen(){ 
+    
+    cambio();
+    $("#ciudades").change(cambio);
+    
+ function cambio(){   
+    
+     city = $("#ciudades").val();
+     
+    
+    
+    
         $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?id=3117732&lang=sp&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
+        url: "http://api.openweathermap.org/data/2.5/weather?id="+ city+"&lang=sp&units=metric&APPID=6967c0545bc9b2c52b54e1fd9e453d42",
         datatype : "json",
         type: "GET",
         success: function(result){
@@ -73,14 +104,7 @@ function infogen(){
         error: function(){
             console.log("ERROR: de este lado");
         }
-       /* select ciudades*/
-            
       
-            
-           /* if ( selecion == 1){
-               3117732(en la direccion url)
-            
-            }*/
             
             
             
@@ -95,7 +119,7 @@ function infogen(){
                   
                 /* 2ndo ajax */                
     $.ajax({
-		url:"http://api.openweathermap.org/data/2.5/forecast?id=3117732&APPID=6967c0545bc9b2c52b54e1fd9e453d42&units=metric",
+		url:"http://api.openweathermap.org/data/2.5/forecast?id="+ city+"&lang=sp&APPID=6967c0545bc9b2c52b54e1fd9e453d42&units=metric",
 		datatype: "json",
 		type: "GET",
 		success: function(forecast){
@@ -164,11 +188,11 @@ function infogen(){
 		}
 
 	});
+    }
  }
     
    
-
-     
+   
     
     
     
