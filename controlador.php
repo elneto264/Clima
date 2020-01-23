@@ -46,12 +46,24 @@
         mysqli_query($link, $nuevo);
 
         header("location:sprint5.php");
-    }
+    };
 
     /*Cuando el valor del "oculto" sea 3, hacemos la función de cerrar sesión, "destruyendo" la función de session_start*/    
     if($ocu == 3){
         session_destroy();
 
         header('location: sprint5.php');
-    }
+    };
+
+
+
+    if($ocu == 4){
+        $userFav = $_SESSION['id'];
+        $cityFav = $_POST['name'];
+        echo $cityFav;
+        $cityAdd = "INSERT INTO cityuser(fk_city, fk_user) VALUES ('$cityFav', '$userFav')";
+        mysqli_query($link, $cityAdd);
+       
+        header("location:sprint5.php");
+    };
 ?> 

@@ -91,6 +91,7 @@ function infogen(){
             /* seccion de imprimir en html*/
             console.log(result);
         $("#name").html(ciudad+" <style>#name {font-size: 5vh};</style>");
+        $("#oc").attr("value", result.id);
         $("#mainTemp").html(Math.round(result.main.temp) + "<style>#mainTemp {font-size: 6vh};</style> ºC");
         $("#maxMin").html(Math.round(result.main.temp_max) + " ºC" + " / " + Math.round(result.main.temp_min) + " ºC");
         $("#wind").html(result.wind.speed + " m/s");
@@ -148,38 +149,89 @@ function infogen(){
 			$("#forecastDay5").html(days[(d + 5)%7]);
             
 
-			$("#maxMinDia1").html(Math.round(Math.max(forecast.list[0].main.temp_max, forecast.list[1].main.temp_max,
-				forecast.list[2].main.temp_max, forecast.list[3].main.temp_max, forecast.list[4].main.temp_max,
-				forecast.list[5].main.temp_max, forecast.list[6].main.temp_max, forecast.list[7].main.temp_max)) + " ºC" +"/"
-				+ Math.round(Math.min(forecast.list[0].main.temp_min, forecast.list[1].main.temp_min,
-				forecast.list[2].main.temp_min, forecast.list[3].main.temp_min, forecast.list[4].main.temp_min, 
-				forecast.list[5].main.temp_min, forecast.list[6].main.temp_min, forecast.list[7].main.temp_min)) + " ºC");
-            
-			$("#maxMinDia2").html(Math.round(Math.max(forecast.list[8].main.temp_max, forecast.list[9].main.temp_max, 
-				forecast.list[10].main.temp_max, forecast.list[11].main.temp_max, forecast.list[12].main.temp_max,
-				forecast.list[13].main.temp_max, forecast.list[14].main.temp_max, forecast.list[15].main.temp_max)) + " ºC" +"/"
-				+ Math.round(Math.min(forecast.list[8].main.temp_min, forecast.list[9].main.temp_min,
-				forecast.list[10].main.temp_min, forecast.list[11].main.temp_min, forecast.list[12].main.temp_min, 
-				forecast.list[13].main.temp_min, forecast.list[14].main.temp_min, forecast.list[15].main.temp_min)) + " ºC");
-			$("#maxMinDia3").html(Math.round(Math.max(forecast.list[16].main.temp_max, forecast.list[17].main.temp_max, 
-				forecast.list[18].main.temp_max, forecast.list[19].main.temp_max, forecast.list[20].main.temp_max,
-				forecast.list[21].main.temp_max, forecast.list[22].main.temp_max, forecast.list[23].main.temp_max)) + " ºC" +"/"
-				+ Math.round(Math.min(forecast.list[16].main.temp_min, forecast.list[17].main.temp_min,
-				forecast.list[18].main.temp_min, forecast.list[19].main.temp_min, forecast.list[20].main.temp_min, 
-				forecast.list[21].main.temp_min, forecast.list[22].main.temp_min, forecast.list[23].main.temp_min)) + " ºC");
-			$("#maxMinDia4").html(Math.round(Math.max(forecast.list[24].main.temp_max, forecast.list[25].main.temp_max, 
-				forecast.list[26].main.temp_max, forecast.list[27].main.temp_max, forecast.list[28].main.temp_max,
-				forecast.list[29].main.temp_max, forecast.list[30].main.temp_max, forecast.list[31].main.temp_max)) + " ºC" +"/"
-				+ Math.round(Math.min(forecast.list[24].main.temp_min, forecast.list[25].main.temp_min,
-				forecast.list[26].main.temp_min, forecast.list[27].main.temp_min, forecast.list[28].main.temp_min, 
-				forecast.list[29].main.temp_min, forecast.list[30].main.temp_min, forecast.list[31].main.temp_min)) + " ºC");
-			$("#maxMinDia5").html(Math.round(Math.max(forecast.list[32].main.temp_max, forecast.list[33].main.temp_max, 
-				forecast.list[34].main.temp_max, forecast.list[35].main.temp_max, forecast.list[36].main.temp_max,
-				forecast.list[37].main.temp_max, forecast.list[38].main.temp_max, forecast.list[39].main.temp_max)) + " ºC" +"/"
-				+ Math.round(Math.min(forecast.list[32].main.temp_min, forecast.list[33].main.temp_min,
-				forecast.list[34].main.temp_min, forecast.list[35].main.temp_min, forecast.list[36].main.temp_min, 
-				forecast.list[37].main.temp_min, forecast.list[38].main.temp_min, forecast.list[39].main.temp_min)) + " ºC");
+			
+            currentDate = new Date();
+            currentDate.setHours(0,0,0,0);
 
+            var minAux1 = 100;
+            var maxAux1= -100;
+
+            var minAux2 = 100;
+            var maxAux2= -100;
+
+            var minAux3 = 100;
+            var maxAux3= -100;
+
+            var minAux4 = 100;
+            var maxAux4= -100;
+
+            var minAux5 = 100;
+            var maxAux5= -100;
+
+            $.each(forecast.list, function(index, value){
+               
+                apiDay = new Date(value.dt_txt);
+                apiDay.setHours(0,0,0,0);
+                var diff = (apiDay - currentDate)
+                diff = diff / (1000*3600*24);
+         
+                if (diff == 1){
+                    arr1 = value.main.temp_max;
+                    if(arr1 > maxAux1){
+                        maxAux1 = arr1;
+                    }
+                    if(arr1 < minAux1){
+                        minAux1 = arr1;
+                    }
+
+                    $("#maxMinDia1").html("Máx. " + Math.round(maxAux1) + "ºC / Min. " + Math.round(minAux1) + "ºC");    
+                };
+                if (diff == 2){
+                    arr2 = value.main.temp_max;
+                    if(arr2 > maxAux2){
+                        maxAux2 = arr2;
+                    }
+                    if(arr2 < minAux2){
+                        minAux2 = arr2;
+                    }
+
+                    $("#maxMinDia2").html("Máx. " + Math.round(maxAux2) + "ºC / Min. " + Math.round(minAux2) + "ºC");    
+                };
+                if (diff == 3){
+                    arr3 = value.main.temp_max;
+                    if(arr3 > maxAux3){
+                        maxAux3 = arr3;
+                    }
+                    if(arr3 < minAux3){
+                        minAux3 = arr3;
+                    }
+
+                    $("#maxMinDia3").html("Máx. " + Math.round(maxAux3) + "ºC / Min. " + Math.round(minAux3) + "ºC");    
+                };
+                if (diff == 4){
+                    arr4 = value.main.temp_max;
+                    if(arr4 > maxAux4){
+                        maxAux4 = arr4;
+                    }
+                    if(arr4 < minAux4){
+                        minAux4 = arr4;
+                    }
+
+                    $("#maxMinDia4").html("Máx. " + Math.round(maxAux4) + "ºC / Min. " + Math.round(minAux4) + "ºC");    
+                };
+                if (diff == 5){
+                    arr5 = value.main.temp_max;
+                    if(arr5 > maxAux5){
+                        maxAux5 = arr5;
+                    }
+                    if(arr5 < minAux5){
+                        minAux5 = arr5;
+                    }
+
+                    $("#maxMinDia5").html("Máx. " + Math.round(maxAux5) + "ºC / Min. " + Math.round(minAux5) + "ºC");    
+                };
+
+            });
 		console.log(forecast);
 			
 		},

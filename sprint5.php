@@ -96,7 +96,17 @@
           </div> 
               
             <img id="imgcurrent" src="" alt="Weather icon" class="imgcurrent">
-            <h4 id="name"></h4>
+            <h4 id="name" name="name"></h4>
+              
+            <form id="formv" action="controlador.php" method="post">
+                <input class="btn btn-outline-info btn-mb" type="submit" id="addFav" style="color: #0096F6; border-color: #0096F6" value="Fav +">
+                 <input type="hidden" name="oculto" value="4">
+                <input type="hidden" id="oc" name="name" value="">
+            </form>
+              
+              
+              
+              
             <h6 id="day"></h6>
             <h6 id="date"></h6>     
          </div>
